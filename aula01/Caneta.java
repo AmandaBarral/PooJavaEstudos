@@ -1,12 +1,12 @@
-package aula2;
+package aula01;
 
 public class Caneta {
-    String modelo;
-    String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
-    void status() {
+    public String modelo;
+    public String cor;
+    private float ponta;
+    protected int carga;
+    private boolean tampada;
+    public void status() {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Uma caneta " + this.cor);
         System.out.println("Ponta: " + this.ponta);
@@ -15,7 +15,7 @@ public class Caneta {
     }
 
 
-    void escrever() {
+    public void escrever() {
         if(this.tampada == true) {
             System.out.println("Erro! Não posso escrever");
         }else {
@@ -23,11 +23,11 @@ public class Caneta {
         }
     }
 
-    void tampar() {
-        this.tampada = true;
+    public void tampar() {
+        this.tampada = true; //este método público pode mexer no atributo privado "tampada" pois está dentro da mesma classe
     }
 
-    void destampar() {
+    public void destampar() {
         this.tampada = false;
     }
 }
